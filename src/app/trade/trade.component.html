@@ -1,0 +1,106 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card">
+                        <div class="header">
+                            <h4 class="title">Trade Buy</h4>
+                        </div>
+                        <div class="content">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Exchange</label>
+                                            <select class="form-control" [(ngModel)]="order.exchange" #exchange="ngModel" name="exchange" (change)="onSelectExchange()">
+												<option value="" selected>-- Please Select --</option>
+												<option *ngFor="let exchange of exchangeList" [value]="exchange.name">
+													{{exchange.name}}
+												</option>
+											</select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>API Key</label>
+                                            <input type="text" class="form-control" placeholder="API Key" value="" [(ngModel)]="order.apiKey" #apiKey="ngModel" name="apiKey">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Secret Key</label>
+                                            <input type="text" class="form-control" placeholder="Secret Key" value="" [(ngModel)]="order.secretKey" #secretKey="ngModel" name="secretKey">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Total BTC</label>
+                                            <input type="text" class="form-control" placeholder="Total BTC to buy" value="" [(ngModel)]="order.totalBtc" #totalBtc="ngModel" name="totalBtc">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Sell Percentage</label>
+                                            <input type="text" class="form-control" placeholder="Sell Percentage" value="" [(ngModel)]="order.sellPercent" #sellPercent="ngModel" name="sellPercent">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Coin</label>
+                                            <input [(ngModel)]="order.buyCoin" name="buyCoin" [typeahead]="selectedExchangeCoins" class="form-control" (typeaheadOnSelect)="onSelectBuyCoin()">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card">
+                        <div class="header">
+                            <h4 class="title">Trade Sell</h4>
+                        </div>
+                        <div class="content">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Exchange</label>
+                                            <select class="form-control" [(ngModel)]="order.exchange" #exchange="ngModel" name="exchange">
+												<option value="" selected>-- Please Select --</option>
+												<option *ngFor="let exchange of exchangeList" [value]="exchange.name">
+													{{exchange.name}}
+												</option>
+											</select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>API Key</label>
+                                            <input type="text" class="form-control" placeholder="API Key" value="" [(ngModel)]="order.apiKey" #apiKey="ngModel" name="apiKey">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Secret Key</label>
+                                            <input type="text" class="form-control" placeholder="Secret Key" value="" [(ngModel)]="order.secretKey" #secretKey="ngModel" name="secretKey">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Coin</label>
+                                            <input [(ngModel)]="order.sellCoin" name="sellCoin" [typeahead]="selectedExchangeCoins" class="form-control" (typeaheadOnSelect)="onSelectSellCoin()">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
