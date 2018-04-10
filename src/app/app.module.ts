@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { TypeaheadModule } from 'ngx-bootstrap';
 
 import { environment } from './../environments/environment';
@@ -47,7 +48,8 @@ import { TradeService } from './trade/trade.service';
   ],
   providers: [
     SharedService,
-    TradeService
+    TradeService,
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })

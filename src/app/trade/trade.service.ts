@@ -18,5 +18,9 @@ export class TradeService {
 		return this.httpClient.post<any>(API_URL.WEBSERVICE_URL + API_URL.BUY_AND_SELL_ORDER, order);
 	}
 
+	public getTimerValue() {
+		return this.httpClient.get<any>(API_URL.WEBSERVICE_URL + '/timestamp');
+	}
+
 
 }

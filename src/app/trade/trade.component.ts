@@ -42,6 +42,12 @@ export class TradeComponent implements OnInit {
                     this.exchangeList[i].coins = exchange.coins;
                 }
             });
+        this.tradeService.getTimerValue()
+            .subscribe((data) => {
+                console.log(data);
+            }, (error) => {
+                console.error(error);
+            })
     }
 
     public onSelectExchange() {
