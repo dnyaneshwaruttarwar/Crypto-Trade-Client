@@ -13,7 +13,7 @@ const routes: Routes = [
     { path: 'coin', component: CoinComponent },
     { path: 'trade', component: TradeComponent },
     { path: 'user', component: UserComponent },
-    { path: '', redirectTo: 'user', pathMatch: 'full' }
+    { path: '', redirectTo: 'trade', pathMatch: 'full' }
 ];
 
 @NgModule({
